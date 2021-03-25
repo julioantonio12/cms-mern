@@ -17,7 +17,7 @@ const { verificarToken } = require('../middlewares/autenticacion');
 CREAMOS LAS RUTAS HTTP
 =============================================*/
 
-app.get('/mostrar-administradores', verificarToken, Administradores.mostrarAdministradores);
+app.get('/mostrar-administradores', Administradores.mostrarAdministradores);
 
 app.post('/crear-administrador', verificarToken, Administradores.crearAdministrador);
 

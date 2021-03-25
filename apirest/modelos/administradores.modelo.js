@@ -37,4 +37,4 @@ administradoresSchema.methods.toJSON = function(){
 EXPORTAMOS EL MODELO
 =============================================*/
 
-module.exports = mongoose.model("administradores", administradoresSchema);
+module.exports = mongoose.model("administrators", administradoresSchema);

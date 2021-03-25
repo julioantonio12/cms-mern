@@ -2,7 +2,7 @@
 IMPORTAMOS EL MODELO
 =============================================*/
 
-const Administradores = require('../modelos/administradores.modelo');
+const Administrators = require('../modelos/administradores.modelo');
 
 //Requerimos el módulo para encriptar contraseñas
 const bcrypt = require('bcrypt');
@@ -18,7 +18,7 @@ let mostrarAdministradores = (req, res)=>{
 
 	//https://mongoosejs.com/docs/api.html#model_Model.find
 
-	Administradores.find({})
+	Administrators.find({})
 	.exec((err, data)=>{
 
 		if(err){
@@ -32,7 +32,7 @@ let mostrarAdministradores = (req, res)=>{
 		}
 
 		//Contar la cantidad de registros
-		Administradores.countDocuments({}, (err, total)=>{
+		Administrators.countDocuments({}, (err, total)=>{
 
 			if(err){
 
