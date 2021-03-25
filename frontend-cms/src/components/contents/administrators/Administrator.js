@@ -1,3 +1,8 @@
+import $ from "jquery";
+import "datatables.net";
+import "datatables.net-bs4";
+import "datatables.net-responsive"
+
 export default function Administrators(){
     return(
         <div className="content-wrapper" style={{minHeight: "494px" }}>

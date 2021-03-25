@@ -63,7 +63,7 @@ app.use( require('./rutas/administradores.ruta'));
 CONEXIÓN A LA BASE DE DATOS
 =============================================*/
 
-mongoose.connect('mongodb://localhost:27017/apirest', {useNewUrlParser: true,useUnifiedTopology: true}, (err, res)=>{
+mongoose.connect('mongodb://localhost:27017/cms-mern', {useNewUrlParser: true,useUnifiedTopology: true}, (err, res)=>{
 
 	if(err) throw err;
 
