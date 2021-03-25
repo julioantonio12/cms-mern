@@ -1,3 +1,4 @@
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 //Fixed components
 import Header from "./components/header/Header";
 import Sidebar from './components/sidebar/Sidebar';
@@ -11,7 +12,11 @@ export default function App() {
       <div className="wrapper">
         <Header/>
         <Sidebar/>
-        <Administrators/>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Administrators}/>
+          </Switch>
+        </BrowserRouter>
         <Footer/>
       </div>
     </div>

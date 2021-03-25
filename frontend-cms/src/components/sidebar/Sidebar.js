@@ -26,7 +26,7 @@ export default function Sidebar() {
                     </div>
 
                     <div className="info">
-						<a href="#/" className="d-block">
+						<a href="/" className="d-block">
 							Administrador
 						</a>
 					</div>
