@@ -15,6 +15,7 @@ export default function Administrators(){
         getAdministrators.data.forEach((admin, index)=>{
             dataSet[index] = [(index+1),
                                  admin.user,
+                                 admin.email,
                                  [admin._id, admin.user]];
         })
         //Executing datatable    
@@ -25,6 +26,7 @@ export default function Administrators(){
                 columns: [
                     { title: "#" },
                     { title: "Usuario" },
+                    { title: "Email" },
                     { title: "Acciones",
                     render: function(data){ //Returning the buttons to the "Acciones" column
                         return `

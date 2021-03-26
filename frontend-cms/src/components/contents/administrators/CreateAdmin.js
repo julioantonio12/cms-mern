@@ -121,6 +121,26 @@ export default function CreateAdmin(){
                                 </div>
                             </div>
 
+                            <div className="form-group">
+                                <label className="small text-secondary" htmlFor="email">*Email válido</label>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-append input-group-text">
+                                        <i className="fas fa-envelope"></i>
+                                    </div>
+                                    <input 
+                                        id = "email"
+                                        type="text"
+                                        className="form-control text-lowercase"
+                                        name="email"
+                                        placeholder="Ingrese tu correo electrónico*"
+                                        minLength="1"
+                                        maxLength="30"
+                                        required
+                                    />
+                                    <div className="invalid-feedvack invalid-user"></div>
+                                </div>
+                            </div>
+
                         </div>
                         <div className="modal-footer d-flex justify-content-between">                    
                             <div><button type="button" className="btn btn-danger" data-dismiss="modal">Cerrar</button></div>

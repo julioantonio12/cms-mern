@@ -1,7 +1,6 @@
 /*=============================================
 IMPORTAMOS EL MODELO
 =============================================*/
-
 const Administrators = require('../modelos/administradores.modelo');
 
 //Requerimos el módulo para encriptar contraseñas
@@ -13,95 +12,63 @@ const jwt = require('jsonwebtoken');
 /*=============================================
 FUNCIÓN GET
 =============================================*/
-
 let mostrarAdministradores = (req, res)=>{
-
 	//https://mongoosejs.com/docs/api.html#model_Model.find
-
 	Administrators.find({})
 	.exec((err, data)=>{
-
 		if(err){
-
 			return res.json({
-
 				status:500,
 				mensaje: "Error en la petición"
-
 			})
 		}
 
 		//Contar la cantidad de registros
 		Administrators.countDocuments({}, (err, total)=>{
-
 			if(err){
-
 				return res.json({
-
 					status:500,
 					mensaje: "Error en la petición"
-
 				})
 			}
-
 			res.json({
 				status: 200,
 				total,
 				data
 			})
-
 		})
-
 	}) 
-
 }
 
 /*=============================================
 FUNCIÓN POST
 =============================================*/
-
 let crearAdministrador = (req, res)=>{
-
 	//Obtenemos el cuerpo del formulario
-
 	let body = req.body;
-
 	//Obtenemos los datos del formulario para pasarlos al modelo
-
 	let administrators = new Administrators({
-	
 		user:body.user.toLowerCase(),
-		password:bcrypt.hashSync(body.password,10)
-
+		password:bcrypt.hashSync(body.password,10),
+		email:body.email.toLowerCase()
 	})
-
 	//Guardamos en MongoDB
 	//https://mongoosejs.com/docs/api.html#model_Model-save
-
 	administrators.save((err, data)=>{
-
 		if(err){
 			console.log(err)
 			return res.json({
-
 				status:400,
 				mensaje: "Error al almacenar el administrador",
 				err
-
 			})
-
 		}
-
 		res.json({
-
 			status:200,
 			data,
 			mensaje:"El administrador ha sido creado con éxito"
-
 		})
-
 	})
-
 }
 
 /*=============================================

@@ -15,6 +15,10 @@ let administradoresSchema = new Schema({
 	password: {
 		type: String,
 		required: [true, "La contraseña es obligatoria"]
+	},
+	email: {
+		type: String,
+		required: [true, "El email es obligatorio"]
 	}
 })
 
