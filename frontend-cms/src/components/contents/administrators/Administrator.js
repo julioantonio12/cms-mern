@@ -4,6 +4,7 @@ import 'datatables.net';
 import 'datatables.net-bs4';
 import 'datatables.net-responsive';
 import {routeAPI} from '../../../config/Config';
+import CreateAdmin from './CreateAdmin';
 
 export default function Administrators(){
 
@@ -91,7 +92,7 @@ export default function Administrators(){
 							<div className="card card-primary card-outline">
 								<div className="card-header">
 									<h5 className="m-0">
-										<button className="btn btn-primary" data-toggle="modal" data-target="#">Crear administrador</button>
+										<button className="btn btn-primary" data-toggle="modal" data-target="#createAdmin">Crear administrador</button>
 									</h5>
 								</div>
 								<div className="card-body">
@@ -104,6 +105,8 @@ export default function Administrators(){
 				</div>
 			</div>
             {/* Here add create and edit admin component               */}
+            {/* This is the modal view to create Admin */}
+            <CreateAdmin />   
         </div>
     );
 }

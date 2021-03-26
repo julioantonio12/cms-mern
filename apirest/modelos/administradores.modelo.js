@@ -7,7 +7,7 @@ let Schema = mongoose.Schema;
 
 let administradoresSchema = new Schema({
 
-	usuario: {
+	user: {
 		type: String,
 		required: [true, "El usuario es obligatorio"],
 		unique: true

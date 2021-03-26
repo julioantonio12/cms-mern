@@ -19,7 +19,7 @@ CREAMOS LAS RUTAS HTTP
 
 app.get('/mostrar-administradores', Administradores.mostrarAdministradores);
 
-app.post('/crear-administrador', verificarToken, Administradores.crearAdministrador);
+app.post('/crear-administrador', Administradores.crearAdministrador);  //no token needed
 
 app.put('/editar-administrador/:id', verificarToken, Administradores.editarAdministrador);
 

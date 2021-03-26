@@ -68,9 +68,9 @@ let crearAdministrador = (req, res)=>{
 
 	//Obtenemos los datos del formulario para pasarlos al modelo
 
-	let administradores = new Administradores({
+	let administrators = new Administrators({
 	
-		usuario:body.usuario.toLowerCase(),
+		user:body.user.toLowerCase(),
 		password:bcrypt.hashSync(body.password,10)
 
 	})
@@ -78,10 +78,10 @@ let crearAdministrador = (req, res)=>{
 	//Guardamos en MongoDB
 	//https://mongoosejs.com/docs/api.html#model_Model-save
 
-	administradores.save((err, data)=>{
+	administrators.save((err, data)=>{
 
 		if(err){
-
+			console.log(err)
 			return res.json({
 
 				status:400,
