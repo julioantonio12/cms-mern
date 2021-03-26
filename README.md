@@ -45,8 +45,12 @@ La carpeta *frontend-cms* que es el frontend del proyecto, se ejecuta, estando e
 ## Con eso se abrirá una ventana en el navegador y ¡listo! Puede comenzar a utilizar la práctica.
 ---
 
-# Esquema de la BDD:
-El **esquema** de la BDD se encuentra dentro del archivo de la apirest llamado:
+# Esquema de la BDD y Conexión:
+El APIrest hace uso del **puerto: 4000** y el frontend-cms del **puerto: 3000**.
+
+Como mencioné anteriormente, la BDD se conecta con la APIrest de manera **automática** al ejecutar la apirest en el paso **7.**, gracias al comando: *nodemon index.js*
+
+Si desea observar el **schema** de mongoose que generé para la entidad *administrator*, dicho archivo se llama
 
 administradores.modelo.js
 
@@ -54,9 +58,4 @@ El cual está en la ruta:
 
 apirest\modelos\administradores.modelo.js
 
-En él se encuentra el modelo o schema de los administradores, se puede observar al final el nombre de la tabla, el cual es **administrators**
-
----
-
-# Conexión con la BDD
-Como mencioné anteriormente, la BDD se conecta con la APIrest de manera **automática** al ejecutar la apirest en el paso **7.**, gracias al comando: *nodemon index.js*
+En él se encuentra el modelo o schema de los administradores, sus propiedades y se puede observar al final el nombre de la tabla, el cual es **administrators**
